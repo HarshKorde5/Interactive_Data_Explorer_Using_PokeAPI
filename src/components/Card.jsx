@@ -1,24 +1,25 @@
 import React from "react";
+import typeColors from "../utils/typesColors";
 
 function Card({pokemon}){
     return (
         <>
             <div
             key={pokemon.id}
-            className="bg-white rounded-xl shadow-md p-4 flex flex-col items-center hover:shadow-lg hover:scale-105 transition duration-300 transform cursor-pointer"
+            className="bg-white rounded-xl shadow-md p-4 flex flex-col items-left hover:shadow-lg hover:scale-105 transition duration-300 transform cursor-pointer"
             >
                 <img
                     src={pokemon.image}
                     alt={pokemon.name}
-                    className="w-35 h-30 mb-2 bg-gray-200 rounded-lg"
+                    className="mb-2 bg-gray-200 rounded-lg"
                 />
+                <p className="text-sm text-gray-500">#{pokemon.id}</p>
                 <h2 className="text-lg font-semibold capitalize text-gray-700">{pokemon.name}</h2>
-                <p className="text-sm text-gray-500 mb-2">#{pokemon.id}</p>
-                <div className="flex flex-wrap justify-center gap-1">
+                <div className="flex flex-wrap gap-1">
                     {pokemon.types.map((type, idx) => (
                     <span
-                        key={idx}
-                        className="bg-blue-200 text-blue-800 text-xs font-medium px-2 py-1 rounded-lg"
+                    key={idx}
+                    className={`text-xs font-medium px-2 py-1 rounded-lg ${typeColors[type] || "bg-gray-200 text-gray-800"}`}
                     >
                         {type}
                     </span>

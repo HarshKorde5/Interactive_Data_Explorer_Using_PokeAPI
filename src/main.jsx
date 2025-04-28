@@ -7,7 +7,7 @@ import HomePage from './components/HomePage.jsx'
 import ListCards from './components/ListCards.jsx'
 
 
-import { pokemonLoader } from './hooks/pokemonLoader.js'
+import { pokemonLoader } from './utils/pokemonLoader.js'
 
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 
