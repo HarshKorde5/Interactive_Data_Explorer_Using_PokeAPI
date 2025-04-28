@@ -1,8 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 
-import App from './App.jsx'
-import Layout from './Layout.jsx'
+  import Layout from './Layout.jsx'
 import HomePage from './components/HomePage.jsx'
 import ListCards from './components/ListCards.jsx'
 
@@ -15,13 +14,13 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
-      
-      <Route path='' element = {<HomePage />} />
-      
-      <Route 
+
+      <Route path='' element={<HomePage />} />
+
+      <Route
         loader={pokemonLoader}
-        path='/list-cards' 
-        element = {<ListCards />} 
+        path='/list-cards'
+        element={<ListCards />}
         errorElement={<div>Something went wrong with PokeAPI!</div>}
       />
 
@@ -30,5 +29,5 @@ const router = createBrowserRouter(
 )
 
 createRoot(document.getElementById('root')).render(
-  <RouterProvider router = {router} />
+  <RouterProvider router={router} />
 )

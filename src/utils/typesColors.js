@@ -18,6 +18,5 @@ const typeColors = {
     steel: "bg-gray-400 text-gray-900",
     dark: "bg-gray-700 text-gray-200",
 };
-  
+
 export default typeColors;
-  
