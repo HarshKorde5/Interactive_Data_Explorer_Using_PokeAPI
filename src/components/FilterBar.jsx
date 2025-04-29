@@ -4,7 +4,7 @@ function FilterBar({ typeFilter, onTypeChange, types }) {
   return (
     <>
       <select
-        className="px-4 py-2 border rounded-lg w-full max-w-xs md:max-w-md"
+        className="px-4 py-2 border-2 rounded-lg w-full max-w-xs md:max-w-md"
         value={typeFilter}
         onChange={(e) => onTypeChange(e.target.value)}
       >

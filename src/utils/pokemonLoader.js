@@ -3,7 +3,9 @@ import axios from "axios";
 export async function pokemonLoader() {
 
     try {
-        const response = await axios.get('https://pokeapi.co/api/v2/pokemon?limit=150');
+        const url = import.meta.env.VITE_POKE_API_URL
+
+        const response = await axios.get(`${url}?limit=150`);
         const basic = response.data.results;
 
         const detailedFetch = await Promise.all(

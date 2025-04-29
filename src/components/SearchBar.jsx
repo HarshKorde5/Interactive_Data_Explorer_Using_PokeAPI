@@ -6,7 +6,7 @@ function SearchBar({ searchTerm, onSearchChange }) {
         <input
             type="text"
             placeholder="Search by name..."
-            className="px-4 py-2 border rounded-lg w-full md:w-1/3"
+            className="px-4 py-2 border-2 rounded-lg w-full md:w-1/3"
             value={searchTerm}
             onChange={(e) => onSearchChange(e.target.value)}
 

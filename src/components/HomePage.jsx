@@ -13,9 +13,7 @@ function HomePage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-
-      {/* Explore Button */}
-
+      
       <div className='flex-grow flex items-center justify-center rounded-lg'>
         <button
           onClick={handleClick}

@@ -15,10 +15,15 @@ function ListCards() {
     const [typeFilter, setTypeFilter] = useState("all");
     const [types, setTypes] = useState([]);
 
+
+    
     useEffect(() => {
         const fetchTypes = async () => {
             try {
-                const response = await axios.get("https://pokeapi.co/api/v2/type/");
+                const url = import.meta.env.VITE_POKE_API_TYPE;
+
+                const response = await axios.get(url);
+
                 setTypes(response.data.results);
             } catch (error) {
                 console.log("Failed to fetch types:", error);
@@ -42,7 +47,6 @@ function ListCards() {
     return (
         <>
             <div className="min-h-screen rounded-xl m-4 p-4 ">
-                {/* Search and Filter */}
                 <div className="mb-6 flex flex-col md:flex-row items-center justify-center gap-4">
 
                     <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
@@ -59,7 +63,6 @@ function ListCards() {
                             return (
                                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 ">
                                     {filteredList.map((pokemon) => (
-                                        // Card Component
                                         <Card key={pokemon.id} pokemon={pokemon} />
                                     ))}
                                 </div>
