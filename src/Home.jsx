@@ -2,18 +2,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function HomePage() {
+function Home() {
 
   const navigate = useNavigate();
 
 
   const handleClick = () => {
-    navigate('/list-cards');
+    navigate('/list-pokemons');
   }
 
   return (
     <div className="min-h-screen flex flex-col">
-      
+
       <div className='flex-grow flex items-center justify-center rounded-lg'>
         <button
           onClick={handleClick}
@@ -26,4 +26,4 @@ function HomePage() {
   );
 }
 
-export default HomePage
+export default Home;

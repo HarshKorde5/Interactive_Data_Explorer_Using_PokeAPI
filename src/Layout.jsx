@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./components/Header.jsx";
+import Header from "./Header.jsx";
 import { Outlet } from "react-router-dom";
 
 function Layout() {
@@ -8,7 +8,7 @@ function Layout() {
 
             <Header />
 
-            <main className="flex-1 overflow-y-auto pt-5 px-6">
+            <main className="flex-1 overflow-y-auto overflow-x-auto pt-5 px-6">
                 <Outlet />
             </main>
         </div>

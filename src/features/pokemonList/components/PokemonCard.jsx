@@ -1,7 +1,7 @@
 import React from "react";
-import typeColors from "../utils/typesColors";
+import typeColors from "../utils/typeColor";
 
-function Card({ pokemon }) {
+function PokemonCard({ pokemon }) {
     return (
         <>
             <div
@@ -31,4 +31,4 @@ function Card({ pokemon }) {
 }
 
 
-export default Card;
+export default PokemonCard;

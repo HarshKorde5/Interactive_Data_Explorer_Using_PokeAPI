@@ -1,27 +1,21 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 
-  import Layout from './Layout.jsx'
-import HomePage from './components/HomePage.jsx'
-import ListCards from './components/ListCards.jsx'
-
-
-import { pokemonLoader } from './utils/pokemonLoader.js'
+import Layout from './Layout.jsx'
 
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-
+import App from './App.jsx'
+import Home from './Home.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
 
-      <Route path='' element={<HomePage />} />
+      <Route path='' element={<Home />} />
 
       <Route
-        loader={pokemonLoader}
-        path='/list-cards'
-        element={<ListCards />}
-        errorElement={<div>Something went wrong with PokeAPI!</div>}
+        path='/list-pokemons'
+        element={<App />}
       />
 
     </Route>
