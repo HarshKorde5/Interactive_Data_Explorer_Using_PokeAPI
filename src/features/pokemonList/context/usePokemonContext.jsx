@@ -4,16 +4,14 @@ import usePokemon from '../hooks/usePokemon.js';
 export const PokemonContext = createContext();
 
 export const PokemonProvider = ({ children }) => {
-    const { pokemons, loading, error } = usePokemon();
+    const { allPokemons , loading, error } = usePokemon();
 
-    const value = useMemo(
-        () => ({
-            pokemons,
-            loading,
-            error,
-        }),
-        [pokemons, loading, error]
-    );
+    const value = useMemo(() => ({
+        allPokemons,
+        loading,
+        error,
+    }), [allPokemons, loading, error]);
+
     return <PokemonContext.Provider value={value}>{children}</PokemonContext.Provider>;
 };
 

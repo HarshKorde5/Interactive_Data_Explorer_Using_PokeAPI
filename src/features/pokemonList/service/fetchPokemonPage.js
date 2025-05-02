@@ -2,16 +2,17 @@
 
 import axios from "axios";
 
-export const fetchPokemonPage = async (offset, itemsPerPage) => {
+export const fetchPokemonPage = async () => {
+    const fetchCount = 150;
     const url = import.meta.env.VITE_POKE_API_URL;
 
-    const listResponse = await axios.get(`${url}?offset=${offset}&limit=${itemsPerPage}`);
+    const listResponse = await axios.get(`${url}?limit=${fetchCount}`);
     const basicDetails = listResponse.data.results;
 
-    const paginatedData = [];
+    const resultData = [];
     for (const pokemon of basicDetails) {
         const response = await axios.get(pokemon.url);
-        paginatedData.push({
+        resultData.push({
             id: response.data.id,
             name: response.data.name,
             image: response.data.sprites.front_default,
@@ -19,5 +20,5 @@ export const fetchPokemonPage = async (offset, itemsPerPage) => {
         });
     }
 
-    return paginatedData;
+    return resultData;
 };

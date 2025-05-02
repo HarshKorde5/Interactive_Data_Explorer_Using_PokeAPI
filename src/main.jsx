@@ -1,11 +1,11 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 
-import Layout from './Layout.jsx'
+import Layout from './components/Layout.jsx'
 
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
-import Home from './Home.jsx'
+import Home from './components/Home.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(

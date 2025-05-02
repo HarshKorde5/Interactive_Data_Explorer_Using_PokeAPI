@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
 import { fetchPokemonPage } from '../service/fetchPokemonPage';
-import usePaginationContext from '../../pagination/hooks/usePaginationContext';
 
 
 const usePokemon = () => {
-    const { currentPage, itemsPerPage, offset } = usePaginationContext();
 
-    const [pokemons, setPokemons] = useState([]);
+    const [allPokemons, setAllPokemons] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -15,8 +13,8 @@ const usePokemon = () => {
             setLoading(true);
             setError(null);
             try {
-                const data = await fetchPokemonPage(offset, itemsPerPage);
-                setPokemons(data);
+                const data = await fetchPokemonPage();
+                setAllPokemons(data);
             } catch (err) {
                 setError("Failed to load Pokémon.");
             } finally {
@@ -25,9 +23,9 @@ const usePokemon = () => {
         };
 
         loadPokemons();
-    }, [currentPage, itemsPerPage, offset]);
+    }, []);
 
-    return { pokemons, loading, error };
+    return { allPokemons, loading, error };
 };
 
 export default usePokemon;

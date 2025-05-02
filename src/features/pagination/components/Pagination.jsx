@@ -1,21 +1,27 @@
 import React from "react";
-import Button from "../../../Button";
-import usePaginationContext from "../hooks/usePaginationContext";
+import Button from "../../../components/Button";
 
-function Pagination({ total }) {
+import usePaginationContext from "../hooks/usePaginationContext";
+function Pagination() {
 
     const {
         currentPage,
         itemsPerPage,
-        setItemsPerPage,
+        totalPages,
+        offset,
+
         nextPage,
         previousPage,
+        resetPage,
+
+        setCurrentPage,
+        setItemsPerPage,
+        setTotalItems,
     } = usePaginationContext();
 
-    const totalPages = Math.ceil(total / itemsPerPage);
 
     return (
-        <div className="flex justify-center w-fit items-center gap-4 mt-5 bg-gray-200 p-2 rounded-lg">
+        <div className="flex justify-center items-center gap-4 mt-5 bg-gray-200 p-2 rounded-lg">
             <Button
                 size="sm"
                 variant="outlined"
