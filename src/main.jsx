@@ -7,7 +7,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import App from './App.jsx'
 import Home from './components/Home.jsx'
 import PokemonListFavorite from './features/favorite/components/PokemonListFavorite.jsx'
-import PokemonDetail from './features/pokemonDetails/components/PokemonDetails.jsx'
+import PokemonDetails from './features/pokemonDetails/components/PokemonDetails.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,7 +25,7 @@ const router = createBrowserRouter(
       />
       <Route
         path="/pokemon-details/:id"
-        element={<PokemonDetail />}
+        element={<PokemonDetails />}
       />
 
 

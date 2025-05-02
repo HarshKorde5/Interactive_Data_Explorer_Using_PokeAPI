@@ -5,7 +5,14 @@ const FavoriteShape = ({ isChecked, onToggle }) => {
   return (
     <StyledWrapper>
       <label className="container">
-        <input type="checkbox" checked={isChecked} onChange={onToggle} />
+        <input
+          type="checkbox"
+          checked={isChecked}
+          onClick={(e) => {
+            e.stopPropagation();
+            onToggle(e);
+          }}
+        />
         <div className="checkmark">
           <svg viewBox="0 0 256 256">
             <rect fill="none" height={256} width={256} />

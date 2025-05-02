@@ -28,7 +28,8 @@ function PokemonListFavorite() {
     const navigate = useNavigate();
 
 
-    const handleClick = () => {
+    const handleClick = (e) => {
+        e.stopPropagation();
         navigate('/list-pokemons');
     }
     useEffect(() => {
