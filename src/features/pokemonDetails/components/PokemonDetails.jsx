@@ -18,7 +18,7 @@ function PokemonDetails() {
       <div className="bg-white rounded-2xl shadow-lg p-6">
         {/* Header */}
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-6">
-          <div className="w-24 h-24 rounded-xl bg-gray-100 flex items-center justify-center border-4 border-white shadow">
+          <div className="w-56 h-56 rounded-xl bg-gray-100 flex items-center justify-center border-4 border-white shadow">
             <img src={pokemon.sprites.front_default} alt={pokemon.name} className="scale-200 max-w-[100%] max-h-[100%] transition-transform hover:scale-210" />
           </div>
           <h2 className="text-3xl font-bold text-blue-800 relative after:block after:w-12 after:h-1 after:bg-red-500 after:absolute after:-bottom-2 after:left-0">
