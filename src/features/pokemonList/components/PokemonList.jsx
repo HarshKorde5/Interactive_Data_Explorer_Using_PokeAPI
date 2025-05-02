@@ -11,6 +11,7 @@ import PokemonFavorite from "../../favorite/components/PokemonFavorite";
 
 import { usePokemonFilterContext } from "../../pokemonFilter/context/usePokemonFilterContext";
 import usePaginationContext from "../../pagination/hooks/usePaginationContext";
+import PokemonCompareButton from "../../pokemonCompare/components/PokemonCompareButton";
 
 function PokemonList() {
 
@@ -33,6 +34,9 @@ function PokemonList() {
                     <PokemonSort />
                     {/* Pokemon Favorite */}
                     <PokemonFavorite />
+
+                    {/* Pokemon Compare */}
+                    <PokemonCompareButton />
 
                 </div>
 

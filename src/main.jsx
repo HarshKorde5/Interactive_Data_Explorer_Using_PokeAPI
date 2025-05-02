@@ -8,6 +8,7 @@ import App from './App.jsx'
 import Home from './components/Home.jsx'
 import PokemonListFavorite from './features/favorite/components/PokemonListFavorite.jsx'
 import PokemonDetails from './features/pokemonDetails/components/PokemonDetails.jsx'
+import PokemonCompare from './features/pokemonCompare/components/PokemonCompare.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +29,10 @@ const router = createBrowserRouter(
         element={<PokemonDetails />}
       />
 
+      <Route
+        path="/compare-random"
+        element={<PokemonCompare />}
+      />
 
     </Route>
   )
