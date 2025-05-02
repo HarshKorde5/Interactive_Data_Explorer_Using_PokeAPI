@@ -7,6 +7,7 @@ import Pagination from "../../pagination/components/Pagination";
 import PokemonSort from "../../pokemonFilter/components/PokemonSort";
 import PokemonSearch from "../../pokemonFilter/components/PokemonSearch";
 import PokemonFilter from "../../pokemonFilter/components/PokemonFilter";
+import PokemonFavorite from "../../favorite/components/PokemonFavorite";
 
 import { usePokemonFilterContext } from "../../pokemonFilter/context/usePokemonFilterContext";
 import usePaginationContext from "../../pagination/hooks/usePaginationContext";
@@ -14,11 +15,11 @@ import usePaginationContext from "../../pagination/hooks/usePaginationContext";
 function PokemonList() {
 
     const { loading, error } = usePokemonFilterContext();
-    const { paginatedPokemons } = usePaginationContext();
+    const { paginatedItems } = usePaginationContext();
 
     if (loading) return <div><Loading /></div>;
     if (error) return <div>{error}</div>;
-  
+
     return (
         <>
             <div className="min-h-screen rounded-xl m-4 p-4 ">
@@ -30,11 +31,14 @@ function PokemonList() {
                     <PokemonFilter />
                     {/* Pokemon Sort */}
                     <PokemonSort />
+                    {/* Pokemon Favorite */}
+                    <PokemonFavorite />
+
                 </div>
 
                 {/* Pokemon Grid */}
                 <PokemonGrid>
-                    {paginatedPokemons.map((pokemon) => (
+                    {paginatedItems.map((pokemon) => (
                         // map each pokemon to its card(Card component rendering)
                         <PokemonCard key={pokemon.id} pokemon={pokemon} />
                     ))}

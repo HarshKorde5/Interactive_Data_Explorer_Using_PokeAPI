@@ -6,6 +6,8 @@ import Layout from './components/Layout.jsx'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
 import Home from './components/Home.jsx'
+import PokemonListFavorite from './features/favorite/components/PokemonListFavorite.jsx'
+import PokemonDetail from './features/pokemonDetails/components/PokemonDetail.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -17,6 +19,15 @@ const router = createBrowserRouter(
         path='/list-pokemons'
         element={<App />}
       />
+      <Route
+        path='/list-favorites'
+        element={<PokemonListFavorite />}
+      />
+      <Route
+        path="/pokemon-details/:pokemonId"
+        element={<PokemonDetail />}
+      />
+
 
     </Route>
   )

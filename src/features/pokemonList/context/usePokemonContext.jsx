@@ -4,7 +4,7 @@ import usePokemon from '../hooks/usePokemon.js';
 export const PokemonContext = createContext();
 
 export const PokemonProvider = ({ children }) => {
-    const { allPokemons , loading, error } = usePokemon();
+    const { allPokemons, loading, error } = usePokemon();
 
     const value = useMemo(() => ({
         allPokemons,

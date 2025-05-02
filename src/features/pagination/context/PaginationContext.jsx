@@ -1,25 +1,25 @@
+// PaginationContext.jsx
 import React, { createContext, useMemo, useState, useEffect, useCallback } from 'react';
-import { usePokemonFilterContext } from '../../pokemonFilter/context/usePokemonFilterContext';
 
 export const PaginationContext = createContext();
 
-export const PaginationProvider = ({ children }) => {
-    const { filteredPokemons } = usePokemonFilterContext();
-
+export const PaginationProvider = ({ data = [], children }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(10);
+
     useEffect(() => {
         setCurrentPage(1);
-      }, [filteredPokemons]);
+    }, [data]);
+
     const offset = useMemo(() => {
         return (currentPage - 1) * itemsPerPage;
     }, [currentPage, itemsPerPage]);
 
-    const paginatedPokemons = useMemo(() => {
-        return filteredPokemons.slice(offset, offset + itemsPerPage);
-    }, [filteredPokemons, offset, itemsPerPage]);
+    const paginatedItems = useMemo(() => {
+        return data.slice(offset, offset + itemsPerPage);
+    }, [data, offset, itemsPerPage]);
 
-    const totalItems = useMemo(() => filteredPokemons.length, [filteredPokemons]);
+    const totalItems = data.length;
 
     const totalPages = useMemo(() => {
         return Math.ceil(totalItems / itemsPerPage);
@@ -40,21 +40,22 @@ export const PaginationProvider = ({ children }) => {
         itemsPerPage,
         totalPages,
         offset,
-        paginatedPokemons,
+        paginatedItems,
         nextPage,
         previousPage,
         resetPage,
         setCurrentPage,
         setItemsPerPage,
+        setTotalItems: () => { },
     }), [
         currentPage,
         itemsPerPage,
         totalPages,
         offset,
-        paginatedPokemons,
+        paginatedItems,
         nextPage,
         previousPage,
-        resetPage
+        resetPage,
     ]);
 
     return (
