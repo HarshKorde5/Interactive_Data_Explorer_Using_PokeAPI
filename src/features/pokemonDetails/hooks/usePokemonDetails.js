@@ -31,12 +31,14 @@ export const usePokemonDetails = (id) => {
 
                 setEvolution(extractChain(evoData.chain));
             } catch (err) {
-                console.error("Failed to fetch Pokémon data", err);
+                console.error("Failed to fetch Pokemon data", err);
             }
             setLoading(false);
         };
 
-        if (id) fetchPokemonData();
+        if (id) {
+            fetchPokemonData();
+        }
     }, [id]);
 
     return { pokemon, evolution, loading };

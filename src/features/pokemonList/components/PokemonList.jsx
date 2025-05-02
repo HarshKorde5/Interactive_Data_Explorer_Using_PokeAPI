@@ -39,7 +39,6 @@ function PokemonList() {
                 {/* Pokemon Grid */}
                 <PokemonGrid>
                     {paginatedItems.map((pokemon) => (
-                        // map each pokemon to its card(Card component rendering)
                         <PokemonCard key={pokemon.id} pokemon={pokemon} />
                     ))}
                 </PokemonGrid>

@@ -38,7 +38,7 @@ function PokemonDetails() {
             </ul>
 
             <h2 className="text-xl font-bold mt-4">Evolution Chain</h2>
-            <p>{evolution.join(" → ")}</p>
+            <p>{evolution.join(" -> ")}</p>
         </div>
     );
 }
