@@ -11,7 +11,8 @@ function PokemonCard({ pokemon }) {
     const navigate = useNavigate();
 
 
-    const handleClick = () => {
+    const handleClick = (e) => {
+        e.stopPropagation();
         navigate(`/pokemon-details/${pokemon.id}`);
 
     }
